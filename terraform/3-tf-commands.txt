@@ -1,0 +1,10 @@
+terraform init
+
+terraform plan
+
+terraform apply
+
+# Retrieve the user password
+terraform output -json user_password
+
+terraform destroy

@@ -1,0 +1,4 @@
+# Source this file
+export MONGODB_ATLAS_PUBLIC_KEY="<your-public-key>"
+export MONGODB_ATLAS_PRIVATE_KEY="<your-private-key>"
+
