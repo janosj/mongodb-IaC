@@ -18,7 +18,7 @@ resource "mongodbatlas_project" "atlas-project" {
 
 # Create a Database User
 resource "mongodbatlas_database_user" "db-user" {
-  username = "user-1"
+  username = var.db_username
   password = random_password.db-user-password.result
   project_id = mongodbatlas_project.atlas-project.id
   auth_database_name = "admin"

@@ -9,6 +9,12 @@ variable "atlas_project_name" {
   description = "Atlas Project Name"
 }
 
+# Atlas DB User Name
+variable "db_username" {
+  type        = string
+  description = "Atlas DB User Name"
+}
+
 # Atlas Project Environment
 variable "environment" {
   type        = string
