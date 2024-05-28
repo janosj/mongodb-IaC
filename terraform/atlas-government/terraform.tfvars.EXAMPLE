@@ -1,6 +1,6 @@
 atlas_org_id = "<your-Atlas-org-ID>"
-atlas_project_name = "<your-Atlas-project-name>"
-db_username = "<your-Atlas-db-username>""
+atlas_project_name = "<Atlas-project-name>"
+db_username = "<Atlas-db-username>""
 environment = "dev"
 cluster_instance_size_name = "M20"
 cloud_provider = "AWS"
