@@ -67,6 +67,37 @@ resource "mongodbatlas_advanced_cluster" "atlas-cluster" {
   }
 }
 
+resource "mongodbatlas_cloud_backup_schedule" "test-backup" {
+  project_id = mongodbatlas_project.atlas-project.id
+  cluster_name = mongodbatlas_advanced_cluster.atlas-cluster.name
+
+  reference_hour_of_day    = 3
+  reference_minute_of_hour = 45
+  restore_window_days      = 4
+
+
+  // This will now add the desired policy items to the existing mongodbatlas_cloud_backup_schedule resource
+  // See here:
+  // https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_backup_schedule
+  policy_item_hourly {
+    frequency_interval = 1
+    retention_unit     = "days"
+    retention_value    = 1
+  }
+  policy_item_daily {
+    frequency_interval = 1
+    retention_unit     = "days"
+    retention_value    = 2
+  }
+  copy_settings {
+    cloud_provider      = "AWS"
+    frequencies         = ["DAILY"]
+    region_name         = "US_GOV_WEST_1"
+    replication_spec_id = mongodbatlas_advanced_cluster.atlas-cluster.replication_specs.*.id[0]
+    should_copy_oplogs  = false
+  }
+}
+
 # Outputs to Display
 output "atlas_cluster_connection_string" { value = mongodbatlas_advanced_cluster.atlas-cluster.connection_strings.0.standard_srv }
 output "ip_access_list"    { value = mongodbatlas_project_ip_access_list.ip.ip_address }
