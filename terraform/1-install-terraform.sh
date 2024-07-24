@@ -40,6 +40,7 @@ brew tap hashicorp/tap
 echo
 echo "Installing Terraform ..."
 brew install hashicorp/tap/terraform
+# brew upgrade terraform
 
 # Verify the installation
 echo
