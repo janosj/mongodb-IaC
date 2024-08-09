@@ -1,0 +1,15 @@
+# Tests Atlas Vector Search against a "local Atlas deployment"
+# by executing a $search aggregation pipeline.
+# This requires a little more effort, because you have to 
+# vectorize the search query.
+
+# Run all .js scripts from within the Mongo Shell.
+# Within the MongoDB shell, javascripts can be executed as follows:
+# load('./<script-name.js>')
+
+# Run the scripts in order to define a query string,
+# vectorize the query string using a remote embedding service (subscription & API key required)
+# and run an aggregation pipeline containing a `$vectorSearch` stage.
+# As provided, these scripts query the `sample_mflix.embedded_movies` collection,
+# included with the Atlas sample datasets.
+

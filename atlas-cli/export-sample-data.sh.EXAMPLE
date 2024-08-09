@@ -1,0 +1,11 @@
+# The embedded_movies collection from the Atlas sample data set is convenient for testing,
+# as it can be used for both regular Search and Vector Search.
+# This grabs it from an available Atlas cluster.
+
+mongoexport \
+ -v \
+ --collection embedded_movies \
+ --out embedded_movies.json \
+ --jsonFormat canonical \
+ "mongodb+srv://<user>:<password>@<cluster>.xxxxx.mongodb.net/sample_mflix"
+

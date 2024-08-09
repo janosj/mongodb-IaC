@@ -1,0 +1,34 @@
+Atlas CLI docs:
+https://www.mongodb.com/docs/atlas/cli/current/
+
+If you haven't used Atlas before, try "atlas setup". Otherwise ...
+
+  atlas auth login
+
+That opens an Atlas login screen in a browser, you pass some codes back and forth, and that's how your CLI gets connected to your account. Otherwise, try "atlas config init" to use an API key. 
+
+  atlas deployments list
+
+The doc page for "atlas cluster create" is here:
+https://www.mongodb.com/docs/atlas/cli/current/command/atlas-clusters-create/
+
+But that take you down a complex path:
+
+	To create the json config file, see here:
+	https://www.mongodb.com/docs/atlas/cli/current/reference/json/cluster-config-file/
+
+	That points to the Atlas Admin API docs, here:
+	https://www.mongodb.com/docs/atlas/reference/api-resources-spec/v2/#tag/Clusters/operation/createCluster
+
+	From the Atlas Admin API docs, copy the Request sample, paste the contents into a json file, and adjust as necessary. 
+
+	That request sample ends up being quite complex. 
+
+An easier path is to start here ("Create an Atlas Cluster Using a Configuration File"):
+https://www.mongodb.com/docs/atlas/cli/current/atlas-cli-create-cluster-from-config-file/
+
+I exported the configuration of an existing sandbox cluster and modified it. 
+The required fields are here:
+https://www.mongodb.com/docs/atlas/reference/api-resources-spec/v2/#tag/Clusters/operation/createCluster
+
+
