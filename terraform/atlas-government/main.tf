@@ -12,7 +12,8 @@ resource "mongodbatlas_project" "atlas-project" {
   name = var.atlas_project_name
   # This is added to create a GovCloud Project.
   # Along with the provider section above, this is the only required modification to this file.
-  # Valid Atlas regions with this setting are US_GOV_EAST_1 and US_GOV_WEST_1.
+  # Valid Atlas regions with this setting are US_GOV_EAST_1 and US_GOV_WEST_1,
+  # and now GCP Assured Workloads
   region_usage_restrictions = "GOV_REGIONS_ONLY"
 }
 
